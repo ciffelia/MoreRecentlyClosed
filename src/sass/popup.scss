@@ -1,0 +1,91 @@
+$title-color: #8FCCE8;
+$title-hover-color: #37B1E5;
+
+body {
+  width: 400px;
+
+  &::-webkit-scrollbar {
+    overflow:hidden;
+    width:5px;
+    background:#eee;
+
+    -webkit-border-radius:3px;
+    border-radius:3px;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height:5px;
+  }
+  &::-webkit-scrollbar-button {
+    display:none;
+  }
+  &::-webkit-scrollbar-piece {
+    background:#eee;
+  }
+  &::-webkit-scrollbar-piece:start {
+    background:#eee;
+  }
+  &::-webkit-scrollbar-thumb {
+    overflow:hidden;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    background:#555;
+  }
+  &::-webkit-scrollbar-corner {
+    overflow:hidden;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    background:#555;
+  }
+}
+
+.sessionItem {
+  dt, dd {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    cursor: pointer;
+
+    -webkit-transition: all .3s;
+  }
+
+  dt {
+    .icon {
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+      font-size: 16px;
+      padding-right: 4px;
+    }
+
+    padding: 0 1em;
+    margin-top: 1em;
+
+    color: #FFF;
+    background-color: $title-color;
+  }
+
+  dd {
+    padding: 0 1.5em;
+    margin-left: 0;
+    font-size: .8em;
+
+    border: {
+      width: 0 1px 1px;
+      style: none solid solid;
+      color: $title-color;
+    }
+  }
+
+  &:hover:not(.tabItemHover), .tabItem:hover {
+    dt {
+      background-color: $title-hover-color;
+    }
+
+    dd {
+      border-color: $title-hover-color;
+    }
+  }
+}
