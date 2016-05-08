@@ -23,11 +23,7 @@ gulp.task('clean', function(callback) {
 gulp.task('manifest', function() {
   return gulp.src('manifest.json')
     .pipe(replace('{{version}}', pkg.version))
-    .pipe(gulp.dest('dist/'));
-});
-
-gulp.task('locale', function() {
-  return gulp.src('_locales/**/*', { base: '.' })
+    .pipe(replace('{{description}}', pkg.description))
     .pipe(gulp.dest('dist/'));
 });
 
@@ -58,14 +54,13 @@ gulp.task('sass', function() {
 gulp.task('build', (callback) => {
   runSequence(
     'clean',
-    ['manifest', 'locale', 'copy', 'html', 'js', 'sass'],
+    ['manifest', 'copy', 'html', 'js', 'sass'],
     callback
   );
 });
 
 gulp.task('watch', function() {
   gulp.watch('manifest.json', ['manifest']);
-  gulp.watch('_locales/**/*', ['locale']);
   gulp.watch(copyList, ['copy']);
   gulp.watch('src/html/**/*.html', ['html']);
   gulp.watch('src/js/**/*.js', ['js']);
