@@ -1,12 +1,12 @@
 ﻿{
   "name": "MoreRecentlyClosed",
   "author": "prince",
-  "version": "1.0.0",
+  "version": "{{version}}",
   "manifest_version": 2,
   "default_locale": "en",
   "description": "__MSG_extensionDescription__",
   "icons": {
-    "128": "icon/icon.png"
+    "128": "icon.png"
   },
   "homepage_url": "https://github.com/prince-0203/MoreRecentlyClosed#readme",
   "browser_action": {
