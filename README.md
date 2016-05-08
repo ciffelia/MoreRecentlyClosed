@@ -4,5 +4,5 @@
 ## Build
 ```bash
 $ npm i
-$ gulp build
+$ npm build
 ```
