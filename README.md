@@ -9,5 +9,5 @@ Chromeの「最近閉じたタブ」の拡張機能。最大25個の最近閉じ
 ## Build
 ```bash
 $ npm i
-$ npm build
+$ npm run build
 ```
