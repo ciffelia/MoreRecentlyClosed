@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "more-recently-closed",
   "version": "1.1.0",
   "description": "「最近閉じたタブ」の拡張機能。最大25個の最近閉じたタブ・ウィンドウを表示する機能など。",
@@ -19,6 +19,7 @@
     "gulp": "^3.9.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "rimraf": "^2.5.2",
