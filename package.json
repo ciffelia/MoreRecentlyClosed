@@ -17,6 +17,7 @@
   "homepage": "https://github.com/prince0203/MoreRecentlyClosed#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-replace": "^0.6.1",

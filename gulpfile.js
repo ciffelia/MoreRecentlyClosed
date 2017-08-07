@@ -1,12 +1,9 @@
 const gulp = require('gulp'),
-      sass = require('gulp-sass'),
-      plumber = require('gulp-plumber'),
-      notify = require('gulp-notify'),
-      sourcemaps = require('gulp-sourcemaps'),
       rimraf = require('rimraf'),
       runSequence = require('run-sequence'),
-      replace = require('gulp-replace'),
       pkg = require('./package.json');
+
+const { sass, plumber, notify, sourcemaps, replace } = require('gulp-load-plugins')();
 
 const copyList = [
   'icon/icon.png',
