@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
       plumber = require('gulp-plumber'),
