@@ -17,16 +17,16 @@
   "homepage": "https://github.com/prince0203/MoreRecentlyClosed#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-notify": "^2.2.0",
+    "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^2.3.1",
-    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "rimraf": "^2.5.2",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^2.1.0"
   },
   "dependencies": {
-    "jquery": "^2.2.3",
-    "material-design-icons": "^2.2.3"
+    "jquery": "^3.2.1",
+    "material-design-icons": "^3.0.1"
   }
 }

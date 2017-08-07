@@ -59,7 +59,7 @@ $(() => {
     });
 
     // アイコンを読み込めなければタブのアイコンに差し替え
-    $('.icon').error(function() {
+    $('.icon').on("error", function() {
       this.outerHTML = '<i class="material-icons icon">insert_drive_file</i>';
     });
 
