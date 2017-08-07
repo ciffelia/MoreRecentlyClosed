@@ -22,7 +22,7 @@ chrome.sessions.onChanged.addListener(() => {
 
 // 最近閉じたタブの一覧を取得
 chrome.sessions.getRecentlyClosed({}, (sessions) => {
-  const sessionList = $('.sessionList');
+  const sessionList = $('#sessionList');
   sessions.forEach((session) => {
     if(session.tab) {
       // タブの場合
