@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prince-0203/MoreRecentlyClosed.git"
+    "url": "git+https://github.com/prince0203/MoreRecentlyClosed.git"
   },
-  "author": "prince <mc.prince.0203@gmail.com> (https://github.com/prince-0203)",
+  "author": "prince <mc.prince.0203@gmail.com> (https://github.com/prince0203)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prince-0203/MoreRecentlyClosed/issues"
+    "url": "https://github.com/prince0203/MoreRecentlyClosed/issues"
   },
-  "homepage": "https://github.com/prince-0203/MoreRecentlyClosed#readme",
+  "homepage": "https://github.com/prince0203/MoreRecentlyClosed#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-notify": "^2.2.0",

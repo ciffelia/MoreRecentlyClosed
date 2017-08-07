@@ -7,7 +7,7 @@
   "icons": {
     "128": "icon.png"
   },
-  "homepage_url": "https://github.com/prince-0203/MoreRecentlyClosed#readme",
+  "homepage_url": "https://github.com/prince0203/MoreRecentlyClosed#readme",
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "Recently Closed Tabs"
