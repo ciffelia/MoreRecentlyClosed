@@ -11,33 +11,33 @@ const copyList = [
   'node_modules/material-design-icons/iconfont/**/*'
 ];
 
-gulp.task('clean', function(callback) {
+gulp.task('clean', (callback) => {
   rimraf('dist', callback);
 });
 
-gulp.task('manifest', function() {
+gulp.task('manifest', () => {
   return gulp.src('manifest.json')
     .pipe(replace('{{version}}', pkg.version))
     .pipe(replace('{{description}}', pkg.description))
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('copy', function() {
+gulp.task('copy', () => {
   return gulp.src(copyList)
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('html', function() {
+gulp.task('html', () => {
   return gulp.src('src/html/**/*.html')
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', () => {
   return gulp.src('src/js/**/*.js')
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   return gulp.src('src/sass/**/*.scss')
     .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
     .pipe(sourcemaps.init())
@@ -54,7 +54,7 @@ gulp.task('build', (callback) => {
   );
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch('manifest.json', ['manifest']);
   gulp.watch(copyList, ['copy']);
   gulp.watch('src/html/**/*.html', ['html']);
