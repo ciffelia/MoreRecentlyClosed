@@ -3,11 +3,12 @@ $title-hover-color: #37B1E5;
 
 body {
   width: 400px;
+  background-color: #f2f4f5;
 
   &::-webkit-scrollbar {
     overflow:hidden;
     width:5px;
-    background:#eee;
+    background: #ccc;
 
     -webkit-border-radius:3px;
     border-radius:3px;
@@ -71,6 +72,7 @@ body {
     padding: 0 1.5em;
     margin-left: 0;
     font-size: .8em;
+    background-color: #fafafa;
 
     border: {
       width: 0 1px 1px;
