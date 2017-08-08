@@ -1,5 +1,6 @@
 # MoreRecentlyClosed
-[![Build Status](https://travis-ci.org/prince0203/MoreRecentlyClosed.svg?branch=master)](https://travis-ci.org/prince0203/MoreRecentlyClosed)  
+[![Build Status](https://travis-ci.org/prince0203/MoreRecentlyClosed.svg?branch=master)](https://travis-ci.org/prince0203/MoreRecentlyClosed)
+[![Greenkeeper badge](https://badges.greenkeeper.io/prince0203/MoreRecentlyClosed.svg)](https://greenkeeper.io/)  
 Chromeの「最近閉じたタブ」の拡張機能。最大25個の最近閉じたタブ・ウィンドウを表示する機能など。
 
 ## Install
