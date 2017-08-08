@@ -58,7 +58,7 @@ chrome.sessions.getRecentlyClosed({}, (sessions) => {
   });
 
   // アイコンを読み込めなければタブのアイコンに差し替え
-  $('.icon').on("error", function() {
+  $('.icon').one("error", function() {
     this.src = 'ic_insert_drive_file_black_24px.svg';
   });
 
