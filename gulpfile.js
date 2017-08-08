@@ -7,8 +7,8 @@ const { sass, plumber, notify, sourcemaps, replace } = require('gulp-load-plugin
 
 const copyList = [
   'icon/icon.png',
-  'node_modules/jquery/dist/jquery.min.js',
-  'node_modules/material-design-icons/iconfont/**/*'
+  'assets/**/*',
+  'node_modules/jquery/dist/jquery.min.js'
 ];
 
 gulp.task('clean', (callback) => {

@@ -46,7 +46,7 @@ chrome.sessions.getRecentlyClosed({}, (sessions) => {
 
       $(`
         <div class="sessionItem" data-session-type="window" data-session-id="${session.window.sessionId}">
-          <dt><i class="material-icons icon">tab</i> ${session.window.tabs.length} tabs</dt>
+          <dt><img src="ic_tab_black_24px.svg" alt="window" class="icon" /> ${session.window.tabs.length} tabs</dt>
           <dd>
             <dl class="tabList">
               ${tabItems}
@@ -59,7 +59,7 @@ chrome.sessions.getRecentlyClosed({}, (sessions) => {
 
   // アイコンを読み込めなければタブのアイコンに差し替え
   $('.icon').on("error", function() {
-    this.outerHTML = '<i class="material-icons icon">insert_drive_file</i>';
+    this.src = 'ic_insert_drive_file_black_24px.svg';
   });
 
   // クリック時に復元
