@@ -15,6 +15,10 @@ const restoreTab = (id) => {
   });
 };
 
+const restoreWindow = (id) => {
+  chrome.sessions.restore(id);
+};
+
 // 最近閉じたタブの一覧が更新されたときはタブの一覧を再取得
 chrome.sessions.onChanged.addListener(() => {
   location.reload();
@@ -22,8 +26,9 @@ chrome.sessions.onChanged.addListener(() => {
 
 // 最近閉じたタブの一覧を取得
 chrome.sessions.getRecentlyClosed({}, (sessions) => {
-  const sessionList = $('#sessionList');
-  sessions.forEach((session) => {
+  const $sessionList = $('#sessionList');
+  
+  for(session of sessions) {
     if(session.tab) {
       // タブの場合
       $(`
@@ -31,18 +36,18 @@ chrome.sessions.getRecentlyClosed({}, (sessions) => {
           <dt><img src="${session.tab.favIconUrl}" alt="favicon" class="icon">${session.tab.title}</dt>
           <dd>${session.tab.url}</dd>
         </div>
-      `).appendTo(sessionList);
+      `).appendTo($sessionList);
     } else {
       // ウィンドウの場合
       var tabItems = '';
-      session.window.tabs.forEach((tab) => {
+      for(tab of session.window.tabs) {
         tabItems += `
           <div class="tabItem" data-session-id="${tab.sessionId}">
             <dt><img src="${tab.favIconUrl}" alt="favicon" class="icon">${tab.title}</dt>
             <dd>${tab.url}</dd>
           </div>
         `;
-      });
+      }
 
       $(`
         <div class="sessionItem" data-session-type="window" data-session-id="${session.window.sessionId}">
@@ -53,9 +58,9 @@ chrome.sessions.getRecentlyClosed({}, (sessions) => {
             </dl>
           </dd>
         </div>
-      `).appendTo(sessionList);
+      `).appendTo($sessionList);
     }
-  });
+  }
 
   // アイコンを読み込めなければタブのアイコンに差し替え
   $('.icon').one("error", function() {
@@ -63,37 +68,37 @@ chrome.sessions.getRecentlyClosed({}, (sessions) => {
   });
 
   // クリック時に復元
-  $('.sessionItem').click(function() {
-    const $this = $(this);
+  $('.sessionItem').on('click', function() {
+    const sessionId = this.dataset['sessionId'];
 
-    const sessionId = $this.data('sessionId').toString();
-
-    if($this.data('sessionType') === 'tab') {
+    if(this.dataset['sessionType'] === 'tab') {
       restoreTab(sessionId);
     } else {
-      chrome.sessions.restore(sessionId);
+      restoreWindow(sessionId);
     }
   });
 
   // タイトルやURLが収まりきらなかったときにツールチップを設定
-  $('.sessionItem').find('dd, dt').hover(function(){
-    const $this = $(this);
-    if(this.offsetWidth < this.scrollWidth && !$this.attr('title')){
-      $this.attr('title', $this.text());
-    }
-  });
+  $('.sessionItem')
+    .find('dd, dt')
+    .each(function() {
+      if(this.offsetWidth < this.scrollWidth){
+        this.title = this.innerText;
+      }
+    });
 
   $('.tabItem')
     // hover時に.sessionItemに.tabItemHoverを追加
-    .hover(function() {
+    .on('mouseenter', function() {
       $(this).closest('.sessionItem').addClass('tabItemHover');
-    }, function() {
+    })
+    .on('mouseleave', function() {
       $(this).closest('.sessionItem').removeClass('tabItemHover');
     })
 
     // ウィンドウの中のタブを復元
-    .click(function(e) {
-      restoreTab($(this).data('sessionId').toString());
+    .on('click', function(e) {
+      restoreTab(this.dataset['sessionId']);
 
       // .sessionItemのクリックイベントを発動させない
       e.stopPropagation();

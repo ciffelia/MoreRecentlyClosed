@@ -28,6 +28,6 @@
     "run-sequence": "^2.1.0"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "zepto": "^1.2.0"
   }
 }
